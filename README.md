@@ -18,3 +18,5 @@ Example:
 <img width="860" alt="Screenshot 2025-03-31 at 17 45 53" src="https://github.com/user-attachments/assets/596d2d7a-9e81-4040-ae34-a160dc13dd82" />
 
 <img width="851" alt="Screenshot 2025-03-31 at 17 46 04" src="https://github.com/user-attachments/assets/3217f581-de13-4886-97de-f021a6dae6b9" />
+
+<img width="862" alt="Screenshot 2025-03-31 at 17 57 59" src="https://github.com/user-attachments/assets/11bf8bf8-69dc-4678-a365-4a8a2fe683d4" />
