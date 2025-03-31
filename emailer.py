@@ -2,12 +2,13 @@ import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from email.mime.image import MIMEImage
+from email.utils import formataddr
 from config import SMTP_SERVER, SMTP_PORT, YOUR_EMAIL, YOUR_APP_PASSWORD, MAIN_RECIPIENT, RECIPIENT_EMAILS
 
 def send_html_email(subject, html_body, attachment_path):
     msg = MIMEMultipart("related")
     msg["Subject"] = subject
-    msg["From"] = YOUR_EMAIL
+    msg["From"] = formataddr(("📈 Daily Dashboard", YOUR_EMAIL))
     msg["To"] = MAIN_RECIPIENT
     msg["Bcc"] = ", ".join(RECIPIENT_EMAILS)
 
