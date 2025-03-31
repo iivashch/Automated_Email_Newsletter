@@ -2,13 +2,13 @@ import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from email.mime.image import MIMEImage
-from config import SMTP_SERVER, SMTP_PORT, YOUR_EMAIL, YOUR_APP_PASSWORD, RECIPIENT_EMAIL
+from config import SMTP_SERVER, SMTP_PORT, YOUR_EMAIL, YOUR_APP_PASSWORD, RECIPIENT_EMAILS
 
 def send_html_email(subject, html_body, attachment_path):
     msg = MIMEMultipart("related")
     msg["Subject"] = subject
     msg["From"] = YOUR_EMAIL
-    msg["To"] = RECIPIENT_EMAIL
+    msg["To"] = ", ".join(RECIPIENT_EMAILS)
 
     msg_alt = MIMEMultipart("alternative")
     msg.attach(msg_alt)

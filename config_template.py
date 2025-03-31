@@ -3,7 +3,12 @@ SMTP_SERVER = "smtp.gmail.com"
 SMTP_PORT = 587
 YOUR_EMAIL = "you@example.com"
 YOUR_APP_PASSWORD = "your_app_password"
-RECIPIENT_EMAIL = "recipient@example.com"
+RECIPIENT_EMAILS = [
+    "person1@example.com",
+    "person2@example.com",
+    "person3@example.com"
+    ]
+
 
 STOCKS = ["AAPL", "MSFT", "TSLA", "^GSPC", "^IXIC"]
 
