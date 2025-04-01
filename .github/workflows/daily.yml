@@ -14,7 +14,7 @@ jobs:
       YOUR_EMAIL: ${{ secrets.YOUR_EMAIL }}
       YOUR_APP_PASSWORD: ${{ secrets.YOUR_APP_PASSWORD }}
       MAIN_RECIPIENT: ${{ secrets.MAIN_RECIPIENT }}
-      RECIPIENTS_EMAIL: ${{ secrets.RECIPIENT_EMAIL }}
+      RECIPIENT_EMAILS: ${{ secrets.RECIPIENT_EMAILS }}
       NEWS_API_KEY: ${{ secrets.NEWS_API_KEY }}
       OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
 
