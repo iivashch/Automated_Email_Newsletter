@@ -8,7 +8,11 @@ def get_top_business_headlines():
         response = requests.get(url)
         data = response.json()
         articles = data.get("articles", [])
-        return [{"title": a["title"], "description": a["description"], "url": a["url"], } for a in articles]
+        return [{
+            "title": a["title"], 
+            "description": a.get("description", ""), 
+            "url": a["url"], 
+            } for a in articles]
     except Exception as e:
         print("News API error:", e)
         return []
@@ -20,7 +24,11 @@ def get_top_general_headlines():
         response = requests.get(url)
         data = response.json()
         articles = data.get("articles", [])
-        return [{"title": a["title"], "description": a["description"], "url": a["url"], } for a in articles]
+        return [{
+            "title": a["title"], 
+            "description": a.get("description", ""), 
+            "url": a["url"], 
+            } for a in articles]
     except Exception as e:
         print("News API error:", e)
         return []
@@ -31,7 +39,11 @@ def get_top_technology_headlines():
         response = requests.get(url)
         data = response.json()
         articles = data.get("articles", [])
-        return [{"title": a["title"], "description": a["description"], "url": a["url"], } for a in articles]
+        return [{
+            "title": a["title"], 
+            "description": a.get("description", ""), 
+            "url": a["url"], 
+            } for a in articles]
     except Exception as e:
         print("News API error:", e)
         return []

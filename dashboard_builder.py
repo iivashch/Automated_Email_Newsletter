@@ -75,19 +75,34 @@ def build_html_dashboard(stock_data, econ_changes, econ_values, quote, news_arti
     #business news articles
     business_news_html = "<ul>"
     for article in news_articles["business"]:
-        business_news_html += f"<li><a href='{article['url']}' style='color:#003366;'>{article['title']}</a></li>"
+        business_news_html += f"""
+        <li style='margin-bottom:10px;'>
+            <strong><a href='{article['url']}' style='color:#003366;'>{article['title']}</a></strong><br>
+            <span style='font-size:13px; color:#444;'>{article.get('description', '')}</span>
+        </li>
+        """
     business_news_html += "</ul>"
 
     #general news articles
     general_news_html = "<ul>"
     for article in news_articles["general"]:
-        general_news_html += f"<li><a href='{article['url']}' style='color:#003366;'>{article['title']}</a></li>"
+        general_news_html += f"""
+        <li style='margin-bottom:10px;'>
+            <strong><a href='{article['url']}' style='color:#003366;'>{article['title']}</a></strong><br>
+            <span style='font-size:13px; color:#444;'>{article.get('description', '')}</span>
+        </li>
+        """
     general_news_html += "</ul>"
 
     #technology news articles
     technology_news_html = "<ul>"
     for article in news_articles["technology"]:
-        technology_news_html += f"<li><a href='{article['url']}' style='color:#003366;'>{article['title']}</a></li>"
+        technology_news_html += f"""
+        <li style='margin-bottom:10px;'>
+            <strong><a href='{article['url']}' style='color:#003366;'>{article['title']}</a></strong><br>
+            <span style='font-size:13px; color:#444;'>{article.get('description', '')}</span>
+        </li>
+        """
     technology_news_html += "</ul>"
 
     html = f"""

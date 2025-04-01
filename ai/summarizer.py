@@ -4,6 +4,8 @@ from config import OPENAI_API_KEY
 client = OpenAI(api_key=OPENAI_API_KEY)
 
 def summarize_changes(economic_data, news_articles):
+    
+    #economic indicators are combined together for chat gpt to summarize
     econ_summary = ""
     for name, df in economic_data.items():
         try:
@@ -11,8 +13,12 @@ def summarize_changes(economic_data, news_articles):
             econ_summary += f"{name}: {value:.2f}\n"
         except Exception:
             econ_summary += f"{name}: unavailable\n"
-
-    news_summary = "\n".join([f"{article['title']}" for article in news_articles])
+    
+    # the three types of news articles are combined together for chat gpt to summarize
+    news_summary = ""
+    for n in ["business", "general", "technology"]:
+        for article in news_articles[n]:
+            news_summary += f"{article['title']}: {article['description']}\n"
 
     prompt = (
         "Summarize the following economic indicators and news headlines in a short, professional "
