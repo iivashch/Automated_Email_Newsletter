@@ -72,11 +72,23 @@ def build_html_dashboard(stock_data, econ_changes, econ_values, quote, news_arti
         {econ_rows}
     </table>
     """
+    #business news articles
+    business_news_html = "<ul>"
+    for article in news_articles["business"]:
+        business_news_html += f"<li><a href='{article['url']}' style='color:#003366;'>{article['title']}</a></li>"
+    business_news_html += "</ul>"
 
-    news_html = "<ul>"
-    for article in news_articles:
-        news_html += f"<li><a href='{article['url']}' style='color:#003366;'>{article['title']}</a></li>"
-    news_html += "</ul>"
+    #general news articles
+    general_news_html = "<ul>"
+    for article in news_articles["general"]:
+        general_news_html += f"<li><a href='{article['url']}' style='color:#003366;'>{article['title']}</a></li>"
+    general_news_html += "</ul>"
+
+    #technology news articles
+    technology_news_html = "<ul>"
+    for article in news_articles["technology"]:
+        technology_news_html += f"<li><a href='{article['url']}' style='color:#003366;'>{article['title']}</a></li>"
+    technology_news_html += "</ul>"
 
     html = f"""
     <html>
@@ -89,8 +101,12 @@ def build_html_dashboard(stock_data, econ_changes, econ_values, quote, news_arti
             {stock_table}
             <h3 style='color:#003366; margin-top:40px;'>🏛️ Key Economic Indicators</h3>
             {econ_table}
-            <h3 style='color:#003366; margin-top:40px;'>📰 Financial News</h3>
-            {news_html}
+            <h3 style='color:#003366; margin-top:40px;'>📰 Business News</h3>
+            {business_news_html}
+            <h3 style='color:#003366; margin-top:40px;'>🌎 General News</h3>
+            {general_news_html}
+            <h3 style='color:#003366; margin-top:40px;'>🖥️ Technology News</h3>
+            {technology_news_html}
             <h3 style='color:#003366; margin-top:40px;'>🧠 Summary</h3>
             <div style='margin-top:10px;'>{markdown.markdown(summary)}</div>
             <h3 style='color:#003366; margin-top:40px;'>📉 Economic Trend Chart</h3>

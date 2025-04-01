@@ -1,7 +1,7 @@
 from data.stock_data import get_stock_data
 from data.economic_data import get_economic_data, calculate_percent_changes
 from data.quote import get_quote_of_the_day
-from data.news import get_top_headlines
+from data.news import get_top_business_headlines, get_top_general_headlines, get_top_technology_headlines
 from ai.summarizer import summarize_changes
 from dashboard_builder import build_html_dashboard
 from emailer import send_html_email
@@ -13,7 +13,7 @@ def main():
     econ_changes, econ_values = calculate_percent_changes(econ_data)
     plot_economic_data(econ_data)
     quote = get_quote_of_the_day()
-    news_articles = get_top_headlines()
+    news_articles = {"business": get_top_business_headlines(), "general": get_top_general_headlines(), "technology": get_top_technology_headlines()}
     summary = summarize_changes(econ_data, news_articles)
 
     html_body = build_html_dashboard(stock_data, econ_changes, econ_values, quote, news_articles, summary)
