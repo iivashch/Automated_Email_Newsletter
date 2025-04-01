@@ -24,8 +24,8 @@ def summarize_changes(economic_data, news_articles):
             news_summary += f"{article['title']}: {article['description']}\n"
 
     prompt = (
-        "Summarize the following economic indicators and news headlines in a short, professional "
-        "daily update about the state of the economy.\n\n"
+        "Analyze the following economic indicators and news headlines and create a short, professional, and complete "
+        "update about the state of the economy. Do not mention the date. Highlight the imporant information.\n\n"
         f"Economic Data:\n{econ_summary}\n"
         f"News:\n{news_summary}"
     )

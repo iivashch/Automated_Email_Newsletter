@@ -13,7 +13,7 @@ def get_top_business_headlines():
         articles = data.get("articles", [])
         return [{
             "title": a["title"], 
-            "description": a.get("description", ""), 
+            "description": a.get("description", "") if a.get("description") else "", 
             "url": a["url"], 
             } for a in articles]
     except Exception as e:
@@ -29,7 +29,7 @@ def get_top_general_headlines():
         articles = data.get("articles", [])
         return [{
             "title": a["title"], 
-            "description": a.get("description", ""), 
+            "description": a.get("description", "") if a.get("description") else "", 
             "url": a["url"], 
             } for a in articles]
     except Exception as e:
@@ -44,7 +44,7 @@ def get_top_technology_headlines():
         articles = data.get("articles", [])
         return [{
             "title": a["title"], 
-            "description": a.get("description", ""), 
+            "description": a.get("description", "") if a.get("description") else "",
             "url": a["url"], 
             } for a in articles]
     except Exception as e:
