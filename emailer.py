@@ -3,7 +3,10 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from email.mime.image import MIMEImage
 from email.utils import formataddr
-from config import SMTP_SERVER, SMTP_PORT, YOUR_EMAIL, YOUR_APP_PASSWORD, MAIN_RECIPIENT, RECIPIENT_EMAILS
+try:
+    from config import SMTP_SERVER, SMTP_PORT, YOUR_EMAIL, YOUR_APP_PASSWORD, MAIN_RECIPIENT, RECIPIENT_EMAILS
+except ImportError:
+    from config_remote import SMTP_SERVER, SMTP_PORT, YOUR_EMAIL, YOUR_APP_PASSWORD, MAIN_RECIPIENT, RECIPIENT_EMAILS
 
 def send_html_email(subject, html_body, attachment_path):
     msg = MIMEMultipart("related")

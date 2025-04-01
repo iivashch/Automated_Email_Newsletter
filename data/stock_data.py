@@ -1,5 +1,8 @@
 import yfinance as yf
-from config import STOCKS
+try:
+    from config import STOCKS
+except ImportError:
+    from config_remote import STOCKS
 
 def get_stock_data():
     results = []

@@ -1,7 +1,10 @@
 import pandas_datareader.data as web
 from datetime import datetime
 import pandas as pd
-from config import FRED_INDICATORS
+try:
+    from config import FRED_INDICATORS
+except ImportError:
+    from config_remote import FRED_INDICATORS
 
 def get_economic_data():
     end = datetime.today()

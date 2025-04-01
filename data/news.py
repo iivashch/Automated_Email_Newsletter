@@ -1,5 +1,8 @@
 import requests
-from config import NEWS_API_KEY
+try:
+    from config import NEWS_API_KEY
+except ImportError:
+    from config_remote import NEWS_API_KEY
 
 # Function to fetch the latest business news headlines
 def get_top_business_headlines():
