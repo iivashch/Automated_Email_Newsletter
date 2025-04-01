@@ -1,5 +1,9 @@
 # Modulated_Automated_Email
 
+[![Dashboard Status](https://github.com/iivashch/Automated_Email_Newsletter/actions/workflows/daily.yml/badge.svg)](https://github.com/iivashch/Automated_Email_Newsletter/actions)
+
+
+
 Automate custom newsletter for every morning, including relevant financial indicators, stocks, and news, as well as get a summary of the above.
 
 API Calls:
