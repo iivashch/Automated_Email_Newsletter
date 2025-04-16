@@ -1,4 +1,4 @@
-# Modulated_Automated_Email
+# Modulated Automated Email
 
 [![Dashboard Status](https://github.com/iivashch/Automated_Email_Newsletter/actions/workflows/daily.yml/badge.svg)](https://github.com/iivashch/Automated_Email_Newsletter/actions)
 
